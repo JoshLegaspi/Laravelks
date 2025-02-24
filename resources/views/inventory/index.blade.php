@@ -24,28 +24,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Item 1</td>
-              <td>50</td>
-              <td>$10</td>
-              <td>Category A</td>
-            </tr>
-            <tr>
-              <td>Item 2</td>
-              <td>30</td>
-              <td>$15</td>
-              <td>Category B</td>
-            </tr>
-            <tr>
-              <td>Item 3</td>
-              <td>20</td>
-              <td>$20</td>
-              <td>Category C</td>
-            </tr>
+            <!-- Here we will loop through items -->
+            @foreach($items as $item)
+              <tr>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->quantity }}</td>
+                <td>${{ $item->price }}</td>
+                <td>{{ $item->category }}</td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
     </div>
+
+    <!-- Add Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
