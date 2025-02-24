@@ -13,4 +13,6 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory');
 
-Route::get('/add', [CreateController::class, 'index'])->name('add');
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+Route::get('/inventory/create', [InventoryController::class, 'create'])->name('inventory.create');
+Route::post('/inventory', [InventoryController::class, 'store'])->name('inventory.store');
